@@ -6,7 +6,7 @@
 /*   By: rayan <rayan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/25 17:01:53 by rayan             #+#    #+#             */
-/*   Updated: 2025/11/25 20:09:03 by rayan            ###   ########.fr       */
+/*   Updated: 2025/12/11 20:08:22 by rayan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <stdint.h>
 # include <unistd.h>
 # include <stddef.h>
+# include <string.h>
 
 char	*get_next_line(int fd);
 size_t	ft_strlen(const char *str);
