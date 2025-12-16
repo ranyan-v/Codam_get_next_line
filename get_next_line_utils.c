@@ -6,14 +6,14 @@
 /*   By: rayan <rayan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/25 19:03:45 by rayan             #+#    #+#             */
-/*   Updated: 2025/11/25 20:07:39 by rayan            ###   ########.fr       */
+/*   Updated: 2025/12/16 16:05:53 by rayan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include <stdio.h>
+#include <stddef.h>
 #include <stdint.h>
-# include <unistd.h>
-# include <stddef.h>
+#include <stdio.h>
+#include <unistd.h>
 
 size_t	ft_strlen(const char *str)
 {
@@ -30,9 +30,9 @@ char	*ft_strchr(const char *ptr, int c)
 	int	i;
 
 	i = 0;
-	while (ptr[i] && ptr[i] != (char) c)
+	while (ptr[i] && ptr[i] != (char)c)
 		i++;
-	if (ptr[i] == (char) c)
+	if (ptr[i] == (char)c)
 		return ((char *)&ptr[i]);
 	return (NULL);
 }
@@ -45,9 +45,9 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	if (!s1 || !s2)
 		return (0);
-	str = (char *)malloc (ft_strlen((char *)s1) + ft_strlen((char *)s2) + 1);
+	str = malloc(ft_strlen((char *)s1) + ft_strlen((char *)s2) + 1);
 	if (!str)
-		return (0);
+		return (NULL);
 	i = 0;
 	while (s1[i])
 	{
@@ -61,6 +61,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		j++;
 	}
 	str[i + j] = '\0';
+	free(s1);
 	return (str);
 }
 
@@ -99,7 +100,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (ft_strdup(""));
 	if ((s_len - start) < len)
 		len = s_len - start;
-	sub = (char *)malloc(len +1);
+	sub = (char *)malloc(len + 1);
 	if (!sub)
 		return (NULL);
 	i = 0;
