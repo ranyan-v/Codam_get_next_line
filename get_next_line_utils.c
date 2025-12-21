@@ -10,10 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-#include <stdint.h>
-#include <stdio.h>
-#include <unistd.h>
+#include "get_next_line.h"
 
 size_t	ft_strlen(const char *str)
 {
@@ -37,7 +34,7 @@ char	*ft_strchr(const char *ptr, int c)
 	return (NULL);
 }
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char *s1, char *s2)
 {
 	int		i;
 	int		j;
