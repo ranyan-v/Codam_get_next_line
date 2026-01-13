@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rayan <rayan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/25 19:23:59 by rayan             #+#    #+#             */
-/*   Updated: 2025/12/23 15:28:41 by rayan            ###   ########.fr       */
+/*   Created: 2026/01/13 19:49:43 by rayan             #+#    #+#             */
+/*   Updated: 2026/01/13 19:53:12 by rayan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 static char	*read_line(int fd, char *box)
 {
@@ -85,7 +85,7 @@ char	*clean_box(char *box)
 	return (new_box);
 }
 
-char	*get_next_line(int fd)
+char	*get_next_line_bonus(int fd)
 {
 	static char	*box;
 	char		*line;

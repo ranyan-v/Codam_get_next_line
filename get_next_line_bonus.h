@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.h                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rayan <rayan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/25 17:01:53 by rayan             #+#    #+#             */
-/*   Updated: 2026/01/13 19:40:58 by rayan            ###   ########.fr       */
+/*   Created: 2026/01/13 19:47:46 by rayan             #+#    #+#             */
+/*   Updated: 2026/01/13 19:51:33 by rayan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#ifndef GET_NEXT_LINE_BONUS_H
+# define GET_NEXT_LINE_BONUS_H
 # include <stdlib.h>
 # include <unistd.h>
 
-char	*get_next_line(int fd);
+char	*get_next_line_bonus(int fd);
 size_t	ft_strlen(const char *str);
 /**
  * @brief - Locates the first occurrence of a given character in a string.
