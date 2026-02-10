@@ -6,7 +6,7 @@
 /*   By: rayan <rayan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 19:47:46 by rayan             #+#    #+#             */
-/*   Updated: 2026/01/13 19:51:33 by rayan            ###   ########.fr       */
+/*   Updated: 2026/02/07 16:29:20 by rayan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,15 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-char	*get_next_line_bonus(int fd);
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 512
+# endif
+
+# ifndef MAX_FD
+#  define MAX_FD 1024
+# endif
+
+char	*get_next_line(int fd);
 size_t	ft_strlen(const char *str);
 /**
  * @brief - Locates the first occurrence of a given character in a string.

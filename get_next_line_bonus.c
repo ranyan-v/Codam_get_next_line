@@ -6,7 +6,7 @@
 /*   By: rayan <rayan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 19:49:43 by rayan             #+#    #+#             */
-/*   Updated: 2026/01/13 19:53:12 by rayan            ###   ########.fr       */
+/*   Updated: 2026/02/07 16:58:48 by rayan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,17 +85,22 @@ char	*clean_box(char *box)
 	return (new_box);
 }
 
-char	*get_next_line_bonus(int fd)
+char	*get_next_line(int fd)
 {
-	static char	*box;
+	static char	*box[MAX_FD];
 	char		*line;
+	char		*temp;
 
-	if (fd < 0 || BUFFER_SIZE <= 0)
+	if (fd < 0 || BUFFER_SIZE <= 0 || fd > MAX_FD)
 		return (NULL);
-	box = read_line(fd, box);
-	if (!box)
+	temp = read_line(fd, box[fd]);
+	if (!temp)
+	{
+		box[fd] = NULL;
 		return (NULL);
-	line = output_line(box);
-	box = clean_box(box);
+	}
+	box[fd] = temp;
+	line = output_line(box[fd]);
+	box[fd] = clean_box(box[fd]);
 	return (line);
 }
